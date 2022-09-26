@@ -4,7 +4,7 @@ import Image from "next/image";
 import styles from "../styles/Home.module.css";
 
 const Home: NextPage = () => {
-  return <div>TikTik</div>;
+  return <div className="text-3x1 font-bold underline">Hello world</div>;
 };
 
 export default Home;
