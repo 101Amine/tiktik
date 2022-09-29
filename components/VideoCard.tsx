@@ -30,6 +30,12 @@ const VideoCard: NextPage<IProps> = ({ post }) => {
     }
   };
 
+  useEffect(() => {
+    if (videoRef?.current) {
+      videoRef.current.muted = isVideoMuted;
+    }
+  }, [isVideoMuted]);
+
   return (
     <div className="flex flex-col border-b-2 border-gray-200 pb-6">
       <div>
@@ -57,7 +63,7 @@ const VideoCard: NextPage<IProps> = ({ post }) => {
                   <GoVerified className="text-blue-400 text-md" />
                 </p>
 
-                <p className="capitalize font-medium text-gray-500 hidden  md:block">
+                <p className="capitalize font-medium text-sm text-gray-500 hidden  md:block">
                   {post.postedBy.userName}
                 </p>
               </div>

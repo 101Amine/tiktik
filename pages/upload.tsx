@@ -69,7 +69,7 @@ const upload = () => {
         topic,
       };
 
-      await axios.post(`${BASE_URL}api/post`, doc);
+      await axios.post(`${BASE_URL}/api/post`, doc);
 
       router.push("/");
     }
@@ -96,7 +96,7 @@ const upload = () => {
                       src={videoAsset.url}
                       loop
                       controls
-                      className="rounded-xl h-[450px] mt-16 bg-black"
+                      className="rounded-xl h-[450px] max-w-[250px] bg-black"
                     ></video>
                   </div>
                 ) : (
@@ -186,8 +186,16 @@ const upload = () => {
               onClick={handlePost}
               className="bg-[#F51997] text-white border-2 text-md p-2 rounded outline-none w-28 lg:w-44 "
             >
-              {" "}
-              Post{" "}
+              {savingPost ? (
+                <LoadingSpinner
+                  height={"25px"}
+                  width={"25px"}
+                  borderSize={"5px"}
+                  margin={"auto"}
+                />
+              ) : (
+                <>Post</>
+              )}
             </button>
           </div>
         </div>

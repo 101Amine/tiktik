@@ -35,6 +35,13 @@ a {
   background-color: transparent;
 }
 
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: inherit!important;
+    color: inherit!important;
+  }
+}
+
 @keyframes spinner {
   0% {
     transform: rotate(0deg);
