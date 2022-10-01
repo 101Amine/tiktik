@@ -42,8 +42,8 @@ const VideoCard: NextPage<IProps> = ({ post }) => {
         <div className="flex gap-3 p-2 font-semibold rounded">
           <div className="md:w-16 md:h-16 w-10 h-10 cursor-pointer">
             {" "}
-            <Link href={""}>
-              <React.Fragment>
+            <Link href={`/profile/${post.userId}`}>
+              <div>
                 <Image
                   width={62}
                   height={62}
@@ -51,12 +51,12 @@ const VideoCard: NextPage<IProps> = ({ post }) => {
                   alt="profile__photo"
                   layout="responsive"
                 />
-              </React.Fragment>
+              </div>
             </Link>
           </div>
 
           <div>
-            <Link href={"/"}>
+            <Link href={`/profile/${post.userId}`}>
               <div className="flex items-center gap-2">
                 <p className="flex gap-2 cursor-pointer items-center md:text-md font-bold text-primary">
                   {post.postedBy.userName}{" "}
@@ -71,7 +71,6 @@ const VideoCard: NextPage<IProps> = ({ post }) => {
           </div>
         </div>
       </div>
-
       <div className="lg-ml-20 flex gap-4 relative">
         <div
           onMouseEnter={() => {
