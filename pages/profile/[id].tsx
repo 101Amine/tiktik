@@ -82,7 +82,7 @@ const Profile: React.FC<IProps> = ({ data }) => {
             ))
           ) : (
             <NoResults
-              text={`No ${showUserVideos ? "" : "Liked"} Videos yet.`}
+              text={`No ${showUserVideos ? "" : "liked"} videos yet.`}
             />
           )}
         </div>
